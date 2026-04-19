@@ -2,9 +2,16 @@ import puppeteer from 'puppeteer';
 
 async function testPopover() {
   const browser = await puppeteer.launch({
-    headless: false,
-    defaultViewport: { width: 1200, height: 800 }
-  });
+  headless: true,
+  args: [
+    '--no-sandbox',
+    '--disable-setuid-sandbox',
+    '--disable-dev-shm-usage',
+    '--disable-accelerated-2d-canvas',
+    '--disable-gpu',
+    '--window-size=1920,1080'
+  ]
+});
   const page = await browser.newPage();
 
   try {

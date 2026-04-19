@@ -33,7 +33,7 @@ jobs:
       - name: Run tests
         run: npm test 
         container:
-    image: 'mcr.microsoft.com/playwright:v1.44.0-focal'
+        image: 'mcr.microsoft.com/playwright:v1.44.0-focal'
 
   build:
     needs: [test]
