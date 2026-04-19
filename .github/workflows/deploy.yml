@@ -31,7 +31,9 @@ jobs:
         run: npm ci  
 
       - name: Run tests
-        run: npm test  
+        run: npm test 
+        container:
+    image: 'mcr.microsoft.com/playwright:v1.44.0-focal'
 
   build:
     needs: [test]
